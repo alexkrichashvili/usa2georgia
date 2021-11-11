@@ -6,6 +6,7 @@ import {
      ScrollView,
      ImageBackground,
      Image,
+     Switch,
 } from 'react-native';
 import AppTextInput from './components/AppTextInput';
 import AppButton from './components/AppButton';
@@ -27,29 +28,31 @@ const validationSchema = Yup.object().shape({
 export default function App() {
      const [userSex, setUserSex] = useState();
      const [person, setPerson] = useState();
+     const [isEnabled, setIsEnabled] = useState(false);
+
+     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
      return (
           <View style={styles.screen}>
-               <ScrollView>
-                    <View style={styles.background}>
-                         <ImageBackground
-                              style={{ width: '100%', height: 100 }}
-                              source={require('./assets/Rectangle.png')}
+               <View style={styles.background}>
+                    <ImageBackground
+                         style={{ width: '100%', height: 100 }}
+                         source={require('./assets/Rectangle.png')}
+                    />
+                    <View style={styles.headline}>
+                         <Image
+                              style={styles.closeIcon}
+                              source={require('./assets/Fill1.png')}
                          />
-                         <View style={styles.headline}>
-                              <Image
-                                   style={styles.closeIcon}
-                                   source={require('./assets/Fill1.png')}
-                              />
-                              <Text style={styles.registrTxt}>რეგისტრაცია</Text>
+                         <Text style={styles.registrTxt}>რეგისტრაცია</Text>
 
-                              <Image
-                                   style={styles.icon}
-                                   source={require('./assets/Group11.png')}
-                              />
-                         </View>
+                         <Image
+                              style={styles.icon}
+                              source={require('./assets/Group11.png')}
+                         />
                     </View>
-
+               </View>
+               <ScrollView>
                     <View style={styles.personWrapper}>
                          <AppButton
                               isPerson={person === 'ფიზიკური'}
@@ -73,6 +76,18 @@ export default function App() {
                     {person === 'ფიზიკური' ? (
                          <View style={styles.citizen}>
                               <Text>უცხოეთის მოქალაქე</Text>
+                              <View style={styles.citizenIconWrapper}>
+                                   <Switch
+                                        trackColor={{
+                                             false: '#767577',
+                                             true: '#4CD964',
+                                        }}
+                                        thumbColor="#ffff"
+                                        ios_backgroundColor="#F2F2F2"
+                                        onValueChange={toggleSwitch}
+                                        value={isEnabled}
+                                   />
+                              </View>
                          </View>
                     ) : null}
 
@@ -94,11 +109,13 @@ export default function App() {
                     >
                          {({ handleChange, handleSubmit, errors }) => (
                               <>
-                                   <AppTextInput
-                                        onChangeText={handleChange('name')}
-                                        placeholder="სახელი"
-                                        lang="ქარ"
-                                   />
+                                   {!isEnabled && (
+                                        <AppTextInput
+                                             onChangeText={handleChange('name')}
+                                             placeholder="სახელი"
+                                             lang="ქარ"
+                                        />
+                                   )}
 
                                    <AppTextInput
                                         onChangeText={handleChange('namelat')}
@@ -106,11 +123,15 @@ export default function App() {
                                         lang="ლათ"
                                    />
 
-                                   <AppTextInput
-                                        onChangeText={handleChange('surname')}
-                                        placeholder="გვარი"
-                                        lang="ქარ"
-                                   />
+                                   {!isEnabled && (
+                                        <AppTextInput
+                                             onChangeText={handleChange(
+                                                  'surname'
+                                             )}
+                                             placeholder="გვარი"
+                                             lang="ქარ"
+                                        />
+                                   )}
 
                                    <AppTextInput
                                         onChangeText={handleChange(
@@ -194,6 +215,7 @@ const styles = StyleSheet.create({
           height: 60,
           alignSelf: 'center',
           borderRadius: 4,
+          marginTop: 25,
      },
      citizen: {
           width: '100%',
@@ -201,7 +223,9 @@ const styles = StyleSheet.create({
           paddingLeft: 30,
           backgroundColor: '#fff',
           marginBottom: 20,
-          justifyContent: 'center',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
      },
      screen: {
           backgroundColor: '#F2F2F2',
@@ -260,6 +284,9 @@ const styles = StyleSheet.create({
      nextBtnWrapper: {
           backgroundColor: '#fff',
           width: '100%',
-          height: 100,
+          height: 200,
+     },
+     citizenIconWrapper: {
+          marginRight: 40,
      },
 });
