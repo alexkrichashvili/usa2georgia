@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import RegisterNavigation from './navigation/RegisterNavigation';
+import colors from './config/colors';
 
 export default function App() {
      return (
@@ -15,7 +16,7 @@ export default function App() {
 const styles = StyleSheet.create({
      container: {
           flex: 1,
-          backgroundColor: '#fff',
+          backgroundColor: colors.white,
           alignItems: 'center',
           justifyContent: 'center',
      },

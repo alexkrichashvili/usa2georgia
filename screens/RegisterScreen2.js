@@ -6,6 +6,7 @@ import { Formik } from 'formik';
 import AppButton from '../components/AppButton';
 import Header from '../components/Header';
 import Dropdown from '../components/Dropdown';
+import colors from '../config/colors';
 
 const validationSchema = Yup.object().shape({
      street: Yup.string().required().label('Street'),
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
           marginVertical: 20,
      },
      nextBtnWrapper: {
-          backgroundColor: '#fff',
+          backgroundColor: colors.white,
           width: '100%',
           position: 'absolute',
           bottom: 15,

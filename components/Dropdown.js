@@ -7,6 +7,7 @@ import {
      ScrollView,
      Image,
 } from 'react-native';
+import colors from '../config/colors';
 const options = ['თბილისი', 'რუსთავი', 'ქუთაისი', 'ბათუმი', 'თელავი'];
 function Dropdown({ selectedItem, setSelectedItem }) {
      const [active, setActive] = useState(false);
@@ -64,7 +65,7 @@ function Dropdown({ selectedItem, setSelectedItem }) {
 
 const styles = StyleSheet.create({
      select: {
-          backgroundColor: '#ffff',
+          backgroundColor: colors.white,
           borderBottomColor: '#F3F3F3',
           borderBottomWidth: 1,
           paddingRight: 75,
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
      text: {
           width: '100%',
           paddingLeft: 30,
-          color: '#A9A9A9',
+          color: colors.gray,
      },
 
      absolute: {
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
           zIndex: 5,
      },
      black: {
-          color: 'black',
+          color: colors.black,
      },
 });
 

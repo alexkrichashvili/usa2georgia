@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, TextInput, StyleSheet, Text } from 'react-native';
+import colors from '../config/colors';
 
 function AppTextInput({ onChangeText, lang, ...otherProps }) {
      return (
@@ -18,7 +19,7 @@ function AppTextInput({ onChangeText, lang, ...otherProps }) {
 const styles = StyleSheet.create({
      container: {
           flexDirection: 'row',
-          backgroundColor: '#ffff',
+          backgroundColor: colors.white,
           borderBottomColor: '#F3F3F3',
           borderBottomWidth: 1,
           paddingRight: 75,

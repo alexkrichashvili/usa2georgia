@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import colors from '../config/colors';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 function AppButton({
      title,
@@ -39,7 +41,7 @@ function AppButton({
 
 const styles = StyleSheet.create({
      button: {
-          backgroundColor: '#F68220',
+          backgroundColor: colors.orange,
           justifyContent: 'center',
           alignItems: 'center',
           padding: 15,
@@ -47,10 +49,10 @@ const styles = StyleSheet.create({
           marginVertical: 10,
      },
      orange: {
-          color: '#F68220',
+          color: colors.orange,
      },
      white: {
-          color: '#fff',
+          color: colors.white,
      },
 });
 

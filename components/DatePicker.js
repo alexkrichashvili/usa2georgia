@@ -3,6 +3,7 @@ import { View, StyleSheet, TextInput, Image, Pressable } from 'react-native';
 import dayjs from 'dayjs';
 
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
+import colors from '../config/colors';
 
 const DatePicker = props => {
      const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
@@ -52,7 +53,7 @@ const DatePicker = props => {
 const styles = StyleSheet.create({
      container: {
           flexDirection: 'row',
-          backgroundColor: '#ffff',
+          backgroundColor: colors.white,
           borderBottomColor: '#F3F3F3',
           borderBottomWidth: 1,
           paddingRight: 60,
@@ -63,7 +64,6 @@ const styles = StyleSheet.create({
           width: '100%',
           paddingLeft: 30,
      },
-     icon: {},
 });
 
 export default DatePicker;

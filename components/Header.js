@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet, ImageBackground, Image, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+import colors from '../config/colors';
 
 function Header({ backIcon, pageIcon }) {
      const navigation = useNavigation();
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
           width: 19,
      },
      registrTxt: {
-          color: 'white',
+          color: colors.white,
           fontSize: 25,
      },
 });

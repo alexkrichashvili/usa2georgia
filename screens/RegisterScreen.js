@@ -6,6 +6,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import DatePicker from '../components/DatePicker';
 import Header from '../components/Header';
+import colors from '../config/colors';
 
 const validationSchema = Yup.object().shape({
      name: Yup.string().required().label('Name'),
@@ -182,7 +183,7 @@ export default function RegisterScreen({ navigation }) {
 const styles = StyleSheet.create({
      container: {
           flex: 1,
-          backgroundColor: '#fff',
+          backgroundColor: colors.white,
           alignItems: 'center',
           justifyContent: 'center',
      },
@@ -206,19 +207,14 @@ const styles = StyleSheet.create({
           width: '100%',
           height: 79,
           paddingLeft: 30,
-          backgroundColor: '#fff',
+          backgroundColor: colors.white,
           marginBottom: 20,
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
      },
      screen: {
-          backgroundColor: '#F2F2F2',
-     },
-
-     errorMessage: {
-          color: 'red',
-          fontSize: 10,
+          backgroundColor: colors.lightGrey,
      },
 
      info: {
@@ -235,7 +231,7 @@ const styles = StyleSheet.create({
           height: 65,
      },
      header: {
-          backgroundColor: 'black',
+          backgroundColor: colors.black,
           height: 300,
           width: '100%',
      },
@@ -245,7 +241,7 @@ const styles = StyleSheet.create({
      },
 
      nextBtnWrapper: {
-          backgroundColor: '#fff',
+          backgroundColor: colors.white,
           width: '100%',
           height: 240,
      },
@@ -253,6 +249,6 @@ const styles = StyleSheet.create({
           marginRight: 40,
      },
      textStyle: {
-          color: '#A9A9A9',
+          color: colors.gray,
      },
 });

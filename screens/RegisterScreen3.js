@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { Formik } from 'formik';
 import AppButton from '../components/AppButton';
 import Header from '../components/Header';
+import colors from '../config/colors';
 
 const backIcon = require('../assets/icons/Mask3.png');
 const pageIcon = require('../assets/icons/group13.png');
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
           marginVertical: 20,
      },
      nextBtnWrapper: {
-          backgroundColor: '#fff',
+          backgroundColor: colors.white,
           width: '100%',
           position: 'absolute',
           bottom: 15,
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
      },
      Wrapper: {
           flexDirection: 'row',
-          backgroundColor: '#fff',
+          backgroundColor: colors.white,
           alignItems: 'center',
 
           height: 79,
@@ -101,7 +102,7 @@ const styles = StyleSheet.create({
      },
      brunch: {
           marginLeft: 10,
-          color: '#F68220',
+          color: colors.orange,
      },
 });
 
