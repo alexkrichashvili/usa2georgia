@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
 import AppTextInput from '../components/AppTextInput';
 import * as Yup from 'yup';
@@ -6,68 +6,57 @@ import { Formik } from 'formik';
 import AppButton from '../components/AppButton';
 import Header from '../components/Header';
 
-const validationSchema = Yup.object().shape({
-     street: Yup.string().required().label('Street'),
-     house: Yup.string().required().label('House'),
-});
-
 const backIcon = require('../assets/icons/Mask3.png');
 const pageIcon = require('../assets/icons/group13.png');
 
 function RegisterScreen3({ navigation }) {
+     const [password, setPassword] = useState('');
+     const [repeatPassword, setRepeatPassword] = useState('');
+
+     const handleSubmit = () => {
+          if (password === repeatPassword) {
+               console.log(password);
+          }
+     };
      return (
-          <Formik
-               initialValues={{
-                    street: '',
-                    house: '',
-               }}
-               onSubmit={values => {
-                    console.log(values);
-               }}
-               validationSchema={validationSchema}
-          >
-               {({ handleChange, handleSubmit, errors }) => (
-                    <>
-                         <View style={styles.container}>
-                              <Header pageIcon={pageIcon} backIcon={backIcon} />
-                              <Text style={styles.txt}>
-                                   საკონტაქტო ინფორმაცია
-                              </Text>
+          <>
+               <View style={styles.container}>
+                    <Header pageIcon={pageIcon} backIcon={backIcon} />
+                    <Text style={styles.txt}>საკონტაქტო ინფორმაცია</Text>
 
-                              <AppTextInput placeholder="პაროლი" />
+                    <AppTextInput
+                         onChangeText={setPassword}
+                         placeholder="პაროლი"
+                    />
 
-                              <AppTextInput
-                                   onChangeText={handleChange('street')}
-                                   placeholder="გაიმეორეთ პაროლი"
-                              />
-                         </View>
+                    <AppTextInput
+                         onChangeText={setRepeatPassword}
+                         placeholder="გაიმეორეთ პაროლი"
+                    />
+               </View>
 
-                         <Text style={styles.txt}>
-                              არიჩიეთ ფილიალი ან ლოქერი
-                         </Text>
+               <Text style={styles.txt}>არიჩიეთ ფილიალი ან ლოქერი</Text>
 
-                         <View style={styles.Wrapper}>
-                              <View style={styles.iconBackground}>
-                                   <Image
-                                        source={require('../assets/icons/map-pin.png')}
-                                   />
-                              </View>
+               <View style={styles.Wrapper}>
+                    <View style={styles.iconBackground}>
+                         <Image
+                              source={require('../assets/icons/map-pin.png')}
+                         />
+                    </View>
 
-                              <Text style={styles.brunch}>ფილიალების სია</Text>
-                         </View>
-                         <View style={styles.nextBtnWrapper}>
-                              <AppButton
-                                   onPress={() => {
-                                        handleSubmit;
-                                   }}
-                                   style={styles.bigButton}
-                                   title="გაგრძელება"
-                                   isActive
-                              />
-                         </View>
-                    </>
-               )}
-          </Formik>
+                    <Text style={styles.brunch}>ფილიალების სია</Text>
+               </View>
+               <View style={styles.nextBtnWrapper}>
+                    <AppButton
+                         onPress={() => {
+                              handleSubmit();
+                         }}
+                         style={styles.bigButton}
+                         title="გაგრძელება"
+                         isActive
+                    />
+               </View>
+          </>
      );
 }
 
