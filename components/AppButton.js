@@ -26,7 +26,10 @@ function AppButton({
                <Text
                     style={[
                          textStyle,
-                         { color: isPerson ? '#F68220' : '#A9A9A9' },
+                         // {
+                         //      color: isPerson ? '#F68220' : '#A9A9A9',
+                         // },
+
                          { color: isActive ? 'white' : 'black' },
                     ]}
                >

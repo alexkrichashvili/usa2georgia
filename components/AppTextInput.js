@@ -18,16 +18,14 @@ function AppTextInput({ onChangeText, lang, ...otherProps }) {
 const styles = StyleSheet.create({
      container: {
           flexDirection: 'row',
-
           backgroundColor: '#ffff',
           borderBottomColor: '#F3F3F3',
           borderBottomWidth: 1,
           paddingRight: 75,
-          height: 60,
+          height: 79,
           alignItems: 'center',
      },
      text: {
-          // paddingRight: 25,
           color: '#DADADA',
      },
 

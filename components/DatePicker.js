@@ -36,7 +36,7 @@ const DatePicker = props => {
                <Pressable onPress={showDatePicker}>
                     <Image
                          style={styles.icon}
-                         source={require('../assets/calendar.png')}
+                         source={require('../assets/icons/calendar.png')}
                     />
                </Pressable>
                <DateTimePickerModal
