@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
 import AppTextInput from '../components/AppTextInput';
-import * as Yup from 'yup';
-import { Formik } from 'formik';
 import AppButton from '../components/AppButton';
 import Header from '../components/Header';
 import colors from '../config/colors';
@@ -28,11 +26,13 @@ function RegisterScreen3({ navigation }) {
                     <AppTextInput
                          onChangeText={setPassword}
                          placeholder="პაროლი"
+                         secureTextEntry={true}
                     />
 
                     <AppTextInput
                          onChangeText={setRepeatPassword}
                          placeholder="გაიმეორეთ პაროლი"
+                         secureTextEntry={true}
                     />
                </View>
 
@@ -62,8 +62,6 @@ function RegisterScreen3({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-     container: {},
-
      txt: {
           marginLeft: 30,
           fontWeight: 'bold',
@@ -87,7 +85,6 @@ const styles = StyleSheet.create({
           flexDirection: 'row',
           backgroundColor: colors.white,
           alignItems: 'center',
-
           height: 79,
           paddingLeft: 30,
      },

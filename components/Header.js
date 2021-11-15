@@ -3,13 +3,14 @@ import { View, StyleSheet, ImageBackground, Image, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import colors from '../config/colors';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 function Header({ backIcon, pageIcon }) {
      const navigation = useNavigation();
      return (
           <View style={styles.background}>
                <ImageBackground
-                    style={{ width: '100%', height: 100 }}
+                    style={{ width: '100%', height: 89 }}
                     source={require('../assets/Rectangle.png')}
                />
                <View style={styles.headline}>
@@ -30,7 +31,7 @@ function Header({ backIcon, pageIcon }) {
                               source={require('../assets/icons/Fill1.png')}
                          />
                     )}
-                    <Text style={styles.registrTxt}>რეგისტრაცია</Text>
+                    <Text style={styles.registerTxt}>რეგისტრაცია</Text>
 
                     <Image style={styles.icon} source={pageIcon} />
                </View>
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
           height: 19,
           width: 19,
      },
-     registrTxt: {
+     registerTxt: {
           color: colors.white,
           fontSize: 25,
      },
