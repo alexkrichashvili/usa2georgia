@@ -13,9 +13,9 @@ const validationSchema = Yup.object().shape({
      surname: Yup.string().required().label('Surname'),
      surnamelat: Yup.string().required().label('Surname'),
      email: Yup.string().required().label('Email'),
-     number: Yup.string().required().label('Number'),
-     dateofbirth: Yup.string().required().label('Date of birth'),
-     pn: Yup.string().required().min(11).label('P/n'),
+     number: Yup.number().required().label('Number'),
+     dateofbirth: Yup.number().required().label('Date of birth'),
+     pn: Yup.number().required().min(11).label('P/n'),
 });
 
 const pageIcon = require('../assets/icons/Group11.png');
