@@ -45,7 +45,12 @@ function Dropdown({ selectedItem, setSelectedItem }) {
                                      }}
                                 >
                                      <View style={styles.select}>
-                                          <Text style={styles.text}>
+                                          <Text
+                                               style={[
+                                                    styles.text,
+                                                    styles.black,
+                                               ]}
+                                          >
                                                {option}
                                           </Text>
                                      </View>
@@ -71,6 +76,7 @@ const styles = StyleSheet.create({
      text: {
           width: '100%',
           paddingLeft: 30,
+          color: '#A9A9A9',
      },
 
      absolute: {
@@ -78,6 +84,9 @@ const styles = StyleSheet.create({
           width: '100%',
           top: 79,
           zIndex: 5,
+     },
+     black: {
+          color: 'black',
      },
 });
 
