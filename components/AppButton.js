@@ -30,7 +30,10 @@ function AppButton({
                          //      color: isPerson ? '#F68220' : '#A9A9A9',
                          // },
 
-                         { color: isActive ? 'white' : 'black' },
+                         isPerson && styles.orange,
+                         isActive && styles.white,
+
+                         // { color: isActive ? 'white' : 'black' },
                     ]}
                >
                     {title}
@@ -47,6 +50,12 @@ const styles = StyleSheet.create({
           padding: 15,
 
           marginVertical: 10,
+     },
+     orange: {
+          color: '#F68220',
+     },
+     white: {
+          color: '#fff',
      },
 });
 

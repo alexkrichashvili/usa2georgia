@@ -50,7 +50,7 @@ export default function RegisterScreen({ navigation }) {
                               textStyle={styles.textStyle}
                          />
                          <AppButton
-                              textStyle={styles.btnTxt}
+                              textStyle={styles.textStyle}
                               style={styles.personBtn}
                               title="იურიდიული"
                               onPress={() => {
@@ -260,6 +260,6 @@ const styles = StyleSheet.create({
           marginRight: 40,
      },
      textStyle: {
-          color: 'red',
+          color: '#A9A9A9',
      },
 });
