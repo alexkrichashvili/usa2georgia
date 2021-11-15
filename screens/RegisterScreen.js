@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
      nextBtnWrapper: {
           backgroundColor: '#fff',
           width: '100%',
-          height: 235,
+          height: 240,
      },
      citizenIconWrapper: {
           marginRight: 40,
