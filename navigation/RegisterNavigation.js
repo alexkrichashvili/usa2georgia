@@ -2,7 +2,6 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import RegisterScreen from '../screens/RegisterScreen';
-import Header from '../components/Header';
 import RegisterScreen2 from '../screens/RegisterScreen2';
 import RegisterScreen3 from '../screens/RegisterScreen3';
 

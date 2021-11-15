@@ -4,7 +4,6 @@ import {
      StyleSheet,
      TouchableWithoutFeedback,
      Text,
-     TouchableOpacity,
      ScrollView,
      Image,
 } from 'react-native';
@@ -79,7 +78,6 @@ const styles = StyleSheet.create({
           width: '100%',
           top: 79,
           zIndex: 100,
-          height: 200,
      },
 });
 

@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-     StyleSheet,
-     Text,
-     View,
-     ScrollView,
-     Image,
-     Switch,
-} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Switch } from 'react-native';
 import AppTextInput from '../components/AppTextInput';
 import AppButton from '../components/AppButton';
 import { Formik } from 'formik';
