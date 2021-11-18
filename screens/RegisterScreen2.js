@@ -42,16 +42,16 @@ function RegisterScreen2({ navigation }) {
                                    onChangeText={handleChange('street')}
                                    placeholder="ქუჩის დასახელება"
                               />
+                              <Dropdown
+                                   selectedItem={selectedItem}
+                                   setSelectedItem={setSelectedItem}
+                              />
 
                               <AppTextInput
                                    onChangeText={handleChange('house')}
                                    placeholder="ბინის # სადარბაზოს, სართული"
                               />
                          </View>
-                         <Dropdown
-                              selectedItem={selectedItem}
-                              setSelectedItem={setSelectedItem}
-                         />
 
                          <View style={styles.nextBtnWrapper}>
                               <AppButton
@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
           width: 325,
           height: 60,
           borderRadius: 4,
+          zIndex: 0,
      },
 });
 

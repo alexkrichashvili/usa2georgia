@@ -13,7 +13,7 @@ function Dropdown({ selectedItem, setSelectedItem }) {
      const [active, setActive] = useState(false);
 
      return (
-          <View>
+          <View style={{ zIndex: 10 }}>
                <TouchableWithoutFeedback
                     onPress={() => {
                          setActive(true);
@@ -82,8 +82,9 @@ const styles = StyleSheet.create({
 
      absolute: {
           position: 'absolute',
-          width: '100%',
           top: 79,
+          left: 0,
+          width: '100%',
           zIndex: 5,
      },
      black: {

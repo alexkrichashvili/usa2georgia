@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
           borderBottomColor: '#F3F3F3',
           borderBottomWidth: 1,
           paddingRight: 60,
-          height: 60,
+          height: 80,
           alignItems: 'center',
      },
      input: {

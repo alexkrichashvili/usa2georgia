@@ -9,8 +9,8 @@ const backIcon = require('../assets/icons/Mask3.png');
 const pageIcon = require('../assets/icons/group13.png');
 
 function RegisterScreen3({ navigation }) {
-     const [password, setPassword] = useState('');
-     const [repeatPassword, setRepeatPassword] = useState('');
+     const [password, setPassword] = useState();
+     const [repeatPassword, setRepeatPassword] = useState();
 
      const handleSubmit = () => {
           if (password === repeatPassword) {

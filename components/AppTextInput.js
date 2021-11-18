@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
           paddingRight: 75,
           height: 79,
           alignItems: 'center',
+          zIndex: 1,
      },
      text: {
           color: '#DADADA',

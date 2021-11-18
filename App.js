@@ -1,15 +1,19 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import RegisterNavigation from './navigation/RegisterNavigation';
 import colors from './config/colors';
+import Servicecenters from './screens/Servicecenters';
 
 export default function App() {
      return (
-          <NavigationContainer>
-               <RegisterNavigation />
-          </NavigationContainer>
+          <View>
+               <Servicecenters />
+          </View>
+          // <NavigationContainer>
+          //      <RegisterNavigation />
+          // </NavigationContainer>
      );
 }
 

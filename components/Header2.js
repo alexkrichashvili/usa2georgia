@@ -4,8 +4,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import colors from '../config/colors';
 
-function Header({ backIcon, pageIcon, title = 'რეგისტრაცია' }) {
-     const navigation = useNavigation();
+function Header2({ title }) {
      return (
           <View style={styles.background}>
                <ImageBackground
@@ -13,26 +12,7 @@ function Header({ backIcon, pageIcon, title = 'რეგისტრაცია
                     source={require('../assets/Rectangle.png')}
                />
                <View style={styles.headline}>
-                    {backIcon ? (
-                         <TouchableOpacity
-                              onPress={() => {
-                                   navigation.goBack();
-                              }}
-                         >
-                              <Image
-                                   style={styles.closeIcon}
-                                   source={backIcon}
-                              />
-                         </TouchableOpacity>
-                    ) : (
-                         <Image
-                              style={styles.closeIcon}
-                              source={require('../assets/icons/Fill1.png')}
-                         />
-                    )}
                     <Text style={styles.registerTxt}>{title}</Text>
-
-                    <Image style={styles.icon} source={pageIcon} />
                </View>
           </View>
      );
@@ -64,4 +44,4 @@ const styles = StyleSheet.create({
      },
 });
 
-export default Header;
+export default Header2;
